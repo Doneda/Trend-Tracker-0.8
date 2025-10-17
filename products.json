@@ -1,0 +1,177 @@
+{
+  "success": true,
+  "count": 15,
+  "products": [
+    {
+      "rank": 1,
+      "title": "Our most popular products based on sales. Updated frequently.",
+      "price": "See price on Amazon",
+      "rating": "Best Seller",
+      "image": "https://via.placeholder.com/200x200?text=Amazon",
+      "link": "https://www.amazon.com/dp/CardInstanceSBzkiBDyCFFgdRJnndqV1w",
+      "platform": "Amazon",
+      "category": "bestsellers",
+      "scrapedAt": "2025-10-17T09:44:18.892128"
+    },
+    {
+      "rank": 2,
+      "title": "Blink Subscription Plus Plan with monthly auto-renewal",
+      "price": "See price on Amazon",
+      "rating": "Best Seller",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/316iIKOVz7L._AC_UL450_SR450,320_.png",
+      "link": "https://www.amazon.com/Blink-Plus-Plan-monthly-auto-renewal/dp/B08JHCVHTY/ref=zg_bs_c_electronics_d_sccl_1/137-7969254-4864202?pd_rd_w=YUz05&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=Q8PDXVSTKFBAGN8W34XC&pd_rd_wg=dCnw3&pd_rd_r=5be7a068-d866-4a52-a7bf-9d9ac0a35701&pd_rd_i=B08JHCVHTY&psc=1",
+      "platform": "Amazon",
+      "category": "bestsellers",
+      "scrapedAt": "2025-10-17T09:44:18.956893"
+    },
+    {
+      "rank": 3,
+      "title": "Apple AirPods 4 Wireless Earbuds, Bluetooth Headphones, with Active Noise Cancellation, Adaptive Audio, Transparency Mode,…",
+      "price": "$189.00",
+      "rating": "Best Seller",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61iBtxCUabL._AC_UL450_SR450,320_.jpg",
+      "link": "https://www.amazon.com/Apple-Headphones-Cancellation-Transparency-Personalized/dp/B0DGJ7HYG1/ref=zg_bs_c_electronics_d_sccl_2/137-7969254-4864202?pd_rd_w=YUz05&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=Q8PDXVSTKFBAGN8W34XC&pd_rd_wg=dCnw3&pd_rd_r=5be7a068-d866-4a52-a7bf-9d9ac0a35701&pd_rd_i=B0DGJ7HYG1&psc=1",
+      "platform": "Amazon",
+      "category": "bestsellers",
+      "scrapedAt": "2025-10-17T09:44:19.002865"
+    },
+    {
+      "rank": 4,
+      "title": "Apple EarPods Headphones with USB-C Plug, Wired Ear Buds with Built-in Remote to Control Music, Phone Calls, and Volume",
+      "price": "$13.15",
+      "rating": "Best Seller",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/513OSdW4elL._AC_UL450_SR450,320_.jpg",
+      "link": "https://www.amazon.com/Apple-EarPods-Headphones-Built-Control/dp/B0DCH8VDXF/ref=zg_bs_c_electronics_d_sccl_3/137-7969254-4864202?pd_rd_w=YUz05&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=Q8PDXVSTKFBAGN8W34XC&pd_rd_wg=dCnw3&pd_rd_r=5be7a068-d866-4a52-a7bf-9d9ac0a35701&pd_rd_i=B0DCH8VDXF&psc=1",
+      "platform": "Amazon",
+      "category": "bestsellers",
+      "scrapedAt": "2025-10-17T09:44:19.049213"
+    },
+    {
+      "rank": 5,
+      "title": "Amazon Product #5",
+      "price": "See price on Amazon",
+      "rating": "Best Seller",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71+Pvh7WB6L._AC_UL450_SR450,320_.jpg",
+      "link": "https://www.amazon.com/Amazon-Fire-TV-Stick-4K-streaming-device/dp/B0CJM1GNFQ/ref=zg_bs_c_electronics_d_sccl_4/137-7969254-4864202?pd_rd_w=YUz05&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=Q8PDXVSTKFBAGN8W34XC&pd_rd_wg=dCnw3&pd_rd_r=5be7a068-d866-4a52-a7bf-9d9ac0a35701&pd_rd_i=B0CJM1GNFQ&psc=1",
+      "platform": "Amazon",
+      "category": "bestsellers",
+      "scrapedAt": "2025-10-17T09:44:19.115090"
+    },
+    {
+      "rank": 6,
+      "title": "Amazon Product #6",
+      "price": "See price on Amazon",
+      "rating": "Best Seller",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61bMNCeAUAL._AC_UL450_SR450,320_.jpg",
+      "link": "https://www.amazon.com/Apple-MX542LL-A-AirTag-Pack/dp/B0D54JZTHY/ref=zg_bs_c_electronics_d_sccl_5/137-7969254-4864202?pd_rd_w=YUz05&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=Q8PDXVSTKFBAGN8W34XC&pd_rd_wg=dCnw3&pd_rd_r=5be7a068-d866-4a52-a7bf-9d9ac0a35701&pd_rd_i=B0D54JZTHY&psc=1",
+      "platform": "Amazon",
+      "category": "bestsellers",
+      "scrapedAt": "2025-10-17T09:44:19.182802"
+    },
+    {
+      "rank": 7,
+      "title": "Amazon Product #7",
+      "price": "See price on Amazon",
+      "rating": "Best Seller",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71rP7f78eFL._AC_UL450_SR450,320_.jpg",
+      "link": "https://www.amazon.com/Apple-MX532LL-A-AirTag/dp/B0CWXNS552/ref=zg_bs_c_electronics_d_sccl_6/137-7969254-4864202?pd_rd_w=YUz05&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=Q8PDXVSTKFBAGN8W34XC&pd_rd_wg=dCnw3&pd_rd_r=5be7a068-d866-4a52-a7bf-9d9ac0a35701&pd_rd_i=B0CWXNS552&psc=1",
+      "platform": "Amazon",
+      "category": "bestsellers",
+      "scrapedAt": "2025-10-17T09:44:19.251976"
+    },
+    {
+      "rank": 8,
+      "title": "Amazon Product #8",
+      "price": "See price on Amazon",
+      "rating": "Best Seller",
+      "image": "https://via.placeholder.com/200x200?text=Amazon",
+      "link": "https://www.amazon.com/dp/p13n-zg-list-carousel-desktop_zeitgeist-lists_0-player-ca2dc401-6c62-4bfa-9225-bdd7914cc198-container-element",
+      "platform": "Amazon",
+      "category": "bestsellers",
+      "scrapedAt": "2025-10-17T09:44:19.445541"
+    },
+    {
+      "rank": 9,
+      "title": "Hanes EcoSmart Hoodie, Midweight Fleece, Pullover Hooded Sweatshirt for Men",
+      "price": "See price on Amazon",
+      "rating": "Best Seller",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71SStjOCNcL._AC_UL450_SR450,320_.jpg",
+      "link": "https://www.amazon.com/Hanes-Pullover-EcoSmart-Fleece-Hoodie/dp/B00JUM3G6E/ref=zg_bs_c_fashion_d_sccl_1/137-7969254-4864202?pd_rd_w=BvmPD&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=Q8PDXVSTKFBAGN8W34XC&pd_rd_wg=dCnw3&pd_rd_r=5be7a068-d866-4a52-a7bf-9d9ac0a35701&pd_rd_i=B00JUM3G6E&psc=1",
+      "platform": "Amazon",
+      "category": "bestsellers",
+      "scrapedAt": "2025-10-17T09:44:19.488114"
+    },
+    {
+      "rank": 10,
+      "title": "SZIVYSHI Corset Tops for Women, Bustier Shapewear Lingerie, Lace Waist Push Up Bodysuit",
+      "price": "$22.99",
+      "rating": "Best Seller",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81hbs7D00gL._AC_UL450_SR450,320_.jpg",
+      "link": "https://www.amazon.com/SZIVYSHI-Shapewear-Lingerie-Strapless-Victorian/dp/B00HB6MCSO/ref=zg_bs_c_fashion_d_sccl_2/137-7969254-4864202?pd_rd_w=BvmPD&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=Q8PDXVSTKFBAGN8W34XC&pd_rd_wg=dCnw3&pd_rd_r=5be7a068-d866-4a52-a7bf-9d9ac0a35701&pd_rd_i=B00HB6MCSO&psc=1",
+      "platform": "Amazon",
+      "category": "bestsellers",
+      "scrapedAt": "2025-10-17T09:44:19.532974"
+    },
+    {
+      "rank": 1,
+      "title": "AI Code Assistant Pro",
+      "description": "AI-powered coding companion",
+      "price": "Freemium",
+      "rating": "👍 1247",
+      "image": "https://via.placeholder.com/200x200?text=PH+1",
+      "link": "https://www.producthunt.com/posts/ai-code-assistant-pro",
+      "platform": "Product Hunt",
+      "category": "tech",
+      "scrapedAt": "2025-10-17T09:44:21.534145"
+    },
+    {
+      "rank": 2,
+      "title": "DataFlow Analytics",
+      "description": "Real-time data visualization platform",
+      "price": "Freemium",
+      "rating": "👍 892",
+      "image": "https://via.placeholder.com/200x200?text=PH+2",
+      "link": "https://www.producthunt.com/posts/dataflow-analytics",
+      "platform": "Product Hunt",
+      "category": "tech",
+      "scrapedAt": "2025-10-17T09:44:21.534343"
+    },
+    {
+      "rank": 3,
+      "title": "MeetingMind AI",
+      "description": "Smart meeting notes and summaries",
+      "price": "Freemium",
+      "rating": "👍 756",
+      "image": "https://via.placeholder.com/200x200?text=PH+3",
+      "link": "https://www.producthunt.com/posts/meetingmind-ai",
+      "platform": "Product Hunt",
+      "category": "tech",
+      "scrapedAt": "2025-10-17T09:44:21.534620"
+    },
+    {
+      "rank": 4,
+      "title": "DevOps Dashboard",
+      "description": "Monitor all your deployments in one place",
+      "price": "Freemium",
+      "rating": "👍 634",
+      "image": "https://via.placeholder.com/200x200?text=PH+4",
+      "link": "https://www.producthunt.com/posts/devops-dashboard",
+      "platform": "Product Hunt",
+      "category": "tech",
+      "scrapedAt": "2025-10-17T09:44:21.534860"
+    },
+    {
+      "rank": 5,
+      "title": "API Gateway Plus",
+      "description": "Simplified API management",
+      "price": "Freemium",
+      "rating": "👍 589",
+      "image": "https://via.placeholder.com/200x200?text=PH+5",
+      "link": "https://www.producthunt.com/posts/api-gateway-plus",
+      "platform": "Product Hunt",
+      "category": "tech",
+      "scrapedAt": "2025-10-17T09:44:21.535055"
+    }
+  ],
+  "lastUpdate": "2025-10-17T09:44:21.536269"
+}

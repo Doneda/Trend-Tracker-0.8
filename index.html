@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrendTracker - What's Trending Today?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .header {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffd93d 0%, #ff6bcb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            min-width: 150px;
+        }
+
+        .stat-box strong {
+            font-size: 2rem;
+            display: block;
+            color: #ffd93d;
+        }
+
+        .stat-box span {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .controls {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #ffd93d 0%, #ff6bcb 100%);
+            border-color: transparent;
+        }
+
+        .refresh-btn {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            border: none;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .spinner {
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid #ffd93d;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .rank-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #ffd93d 0%, #ff6bcb 100%);
+            color: #000;
+            font-weight: bold;
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            margin-bottom: 1rem;
+            padding: 1rem;
+        }
+
+        .platform-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+            min-height: 3.3em;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .product-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+            min-height: 2.5em;
+            line-height: 1.4;
+        }
+
+        .product-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ffd93d;
+        }
+
+        .rating {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .view-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .view-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .error {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(255, 107, 107, 0.2);
+            border-radius: 12px;
+            margin: 2rem;
+        }
+
+        .error h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .error-details {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🔥 TrendTracker</h1>
+        <p>What's trending today across Amazon & Product Hunt</p>
+        <div class="stats">
+            <div class="stat-box">
+                <strong id="totalProducts">--</strong>
+                <span>Total Products</span>
+            </div>
+            <div class="stat-box">
+                <strong id="amazonCount">--</strong>
+                <span>Amazon</span>
+            </div>
+            <div class="stat-box">
+                <strong id="phCount">--</strong>
+                <span>Product Hunt</span>
+            </div>
+            <div class="stat-box">
+                <strong id="lastUpdate">Loading...</strong>
+                <span>Last Updated</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="controls">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="Amazon">Amazon</button>
+        <button class="filter-btn" data-filter="Product Hunt">Product Hunt</button>
+        <button class="filter-btn refresh-btn" onclick="loadProducts()">🔄 Refresh</button>
+    </div>
+
+    <div class="container">
+        <div id="content">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Loading trending products...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:3000/api';
+        let allProducts = [];
+        let currentFilter = 'all';
+
+        // Load products from API
+        async function loadProducts() {
+            const content = document.getElementById('content');
+            
+            content.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading trending products...</p>
+                </div>
+            `;
+
+            try {
+                const response = await fetch(`${API_URL}/trending`);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                
+                if (data.success) {
+                    allProducts = data.products;
+                    updateStats(data);
+                    displayProducts(allProducts);
+                } else {
+                    showError(data.error || 'Failed to load products', data.message);
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                showError(
+                    'Could not connect to API',
+                    'Make sure server is running: node server.js',
+                    error.message
+                );
+            }
+        }
+
+        // Update statistics
+        function updateStats(data) {
+            document.getElementById('totalProducts').textContent = data.count || 0;
+            
+            const amazonCount = data.products.filter(p => p.platform === 'Amazon').length;
+            const phCount = data.products.filter(p => p.platform === 'Product Hunt').length;
+            
+            document.getElementById('amazonCount').textContent = amazonCount;
+            document.getElementById('phCount').textContent = phCount;
+            
+            const lastUpdate = new Date(data.lastUpdate);
+            const timeStr = lastUpdate.toLocaleTimeString();
+            const dateStr = lastUpdate.toLocaleDateString();
+            document.getElementById('lastUpdate').textContent = timeStr;
+            document.getElementById('lastUpdate').title = `${dateStr} ${timeStr}`;
+        }
+
+        // Display products
+        function displayProducts(products) {
+            const content = document.getElementById('content');
+            
+            if (products.length === 0) {
+                content.innerHTML = `
+                    <div class="error">
+                        <h3>No products found</h3>
+                        <p>Try a different filter or refresh the data</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const productsHTML = products.map(product => {
+                const description = product.description 
+                    ? `<div class="product-description">${product.description}</div>`
+                    : '';
+                
+                return `
+                    <div class="product-card">
+                        <div class="rank-badge">#${product.rank}</div>
+                        <img src="${product.image}" 
+                             alt="${product.title}" 
+                             class="product-image" 
+                             onerror="this.src='https://via.placeholder.com/200x200?text=Product'">
+                        <span class="platform-badge">${product.platform}</span>
+                        <h3 class="product-title">${product.title}</h3>
+                        ${description}
+                        <div class="product-info">
+                            <div class="price">${product.price}</div>
+                            <div class="rating">${product.rating || 'N/A'}</div>
+                        </div>
+                        <a href="${product.link}" target="_blank" class="view-btn">
+                            View Product →
+                        </a>
+                    </div>
+                `;
+            }).join('');
+
+            content.innerHTML = `
+                <div class="products-grid">
+                    ${productsHTML}
+                </div>
+            `;
+        }
+
+        // Filter products
+        function filterProducts(platform) {
+            currentFilter = platform;
+            
+            // Update active button
+            document.querySelectorAll('.filter-btn:not(.refresh-btn)').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            if (platform === 'all') {
+                displayProducts(allProducts);
+            } else {
+                const filtered = allProducts.filter(p => p.platform === platform);
+                displayProducts(filtered);
+            }
+        }
+
+        // Show error message
+        function showError(title, message, details) {
+            const content = document.getElementById('content');
+            
+            const detailsHTML = details 
+                ? `<div class="error-details">${details}</div>`
+                : '';
+            
+            content.innerHTML = `
+                <div class="error">
+                    <h3>⚠️ ${title}</h3>
+                    <p>${message}</p>
+                    ${detailsHTML}
+                    <button class="filter-btn refresh-btn" onclick="loadProducts()" style="margin-top: 1rem;">
+                        Try Again
+                    </button>
+                </div>
+            `;
+        }
+
+        // Setup filter buttons
+        document.querySelectorAll('.filter-btn:not(.refresh-btn)').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                filterProducts(filter);
+            });
+        });
+
+        // Load products on page load
+        loadProducts();
+
+        // Auto-refresh every 10 minutes (optional)
+        // setInterval(loadProducts, 600000);
+    </script>
+</body>
+</html>

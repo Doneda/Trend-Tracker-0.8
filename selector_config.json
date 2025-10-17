@@ -1,0 +1,35 @@
+{
+  "inspectedAt": "2025-10-17T09:43:16.599098",
+  "platforms": {
+    "amazon": {
+      "platform": "Amazon",
+      "url": "https://www.amazon.com/Best-Sellers/zgbs",
+      "inspectedAt": "2025-10-17T09:42:26.862594",
+      "selectors": {
+        "container": {
+          "selector": "div[id][class*=\"p13n\"]",
+          "count": 44,
+          "sample_html": "<div class=\"_p13n-zg-banner-landing-page-header_style_zgLandingPageBanner__15GAl\" id=\"CardInstanceqPbknPdkkatF_ucfyfgx_w\" data-card-metrics-id=\"p13n-zg-banner-landing-page-header_zeitgeist-lists_3\"><div class=\"_p13n-zg-banner-landing-page-header_style_zgLandingPageBannerTitleContainer__3pQqv\"><h1 id=\"zg_banner_text\" class=\"a-size-extra-large a-color-base _p13n-zg-banner-landing-page-header_style_zgLandingPageBannerText__3HlJo\">Amazon Best Sellers</h1><span id=\"zg_banner_subtext\" class=\"_p13n-zg-banner-landing-page-header_style_zgLandingPageBannerSubtext__2O5pk\">Our most popular products based on sales.  Updated frequently.</span></div><h1 class=\"_p13n-zg-banner-landing-page-header_style_zgH1Tag__pZ3k3\">Best Sellers</h1></div>"
+        },
+        "price": ".p13n-sc-price",
+        "image": "img",
+        "link": "a.a-link-normal"
+      }
+    },
+    "productHunt": {
+      "platform": "Product Hunt",
+      "url": "https://www.producthunt.com/",
+      "inspectedAt": "2025-10-17T09:42:47.700098",
+      "selectors": {
+        "container": {
+          "selector": "div[class*=\"item\"]",
+          "count": 1,
+          "sample_html": "<div class=\"flex flex-col items-start gap-2 rounded-xl bg-white p-4 sm:absolute sm:bottom-10 sm:left-10 sm:w-96 sm:p-8\"><h2 class=\"text-24 font-semibold text-light-gray\" data-sentry-element=\"Component\" data-sentry-component=\"LegacyText\" data-sentry-source-file=\"index.tsx\">512</h2><h1 class=\"text-32 font-semibold text-dark-gray max-w-80\" data-sentry-element=\"Component\" data-sentry-component=\"LegacyText\" data-sentry-source-file=\"index.tsx\">Oops, something went wrong on our end</h1><p class=\"text-16 font-normal text-light-gray\" data-sentry-element=\"Component\" data-sentry-component=\"LegacyText\" data-sentry-source-file=\"index.tsx\">Please try again shortly, our team is working to resolve the issue! You can always check the Product Hunt social for more updates.</p><a class=\"styles_reset__uMwpr st"
+        },
+        "title": "h2",
+        "description": "p",
+        "link": "a"
+      }
+    }
+  }
+}
